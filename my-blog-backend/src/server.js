@@ -11,8 +11,6 @@ const withDB = async (operations, res) => {
     const client = await MongoClient.connect("mongodb://localhost:27017", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
     });
     const db = client.db("my-blog");
 
@@ -50,7 +48,6 @@ app.post("/api/articles/:name/upvote", async (req, res) => {
         },
       }
     );
-
     const updatedArticleInfo = await db
       .collection("articles")
       .findOne({ name: articleName });
@@ -75,7 +72,6 @@ app.post("/api/articles/:name/add-comment", (req, res) => {
         },
       }
     );
-
     const updatedArticleInfo = await db
       .collection("articles")
       .findOne({ name: articleName });
