@@ -1,8 +1,12 @@
 import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-const NotFoundPage = () => {
+const NotFound = () => {
   return (
     <>
+      <Header />
+
       <section className="page-banner-section">
         <div className="container">
           <h1>Page Could Not Be Found</h1>
@@ -17,14 +21,15 @@ const NotFoundPage = () => {
             <p>
               We are sorry. But the page you are looking for cannot be found.{" "}
             </p>
-            <a className="button-one" href="/">
+            <a className="button-one" href="index.html">
               Go To HomePage
             </a>
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
 
-export default NotFoundPage;
+export default NotFound;
