@@ -30,16 +30,16 @@ const ArticlePage = ({ match }) => {
   return (
     <>
       <h1>{article.title}</h1>
-      <UpvotesSection
-        articleName={name}
-        upvotes={articleInfo.upvotes}
-        setArticleInfo={setArticleInfo}
-      />
       {article.content.map((paragraph, key) => (
         <p key={key}>{paragraph}</p>
       ))}
       <CommentsList comments={articleInfo.comments} />
       <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
+      <UpvotesSection
+        articleName={name}
+        upvotes={articleInfo.upvotes}
+        setArticleInfo={setArticleInfo}
+      />
       <h3>Other Articles:</h3>
       <ArticlesList articles={otherArticles} />
     </>
