@@ -11,6 +11,8 @@ const withDB = async (operations, res) => {
     const client = await MongoClient.connect("mongodb://localhost:27017", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
     });
     const db = client.db("my-blog");
 
